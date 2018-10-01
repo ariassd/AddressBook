@@ -1,0 +1,77 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px
+}
+
+.navbar .navbar-brand {
+    color: #efefef !important;
+}
+
+body {
+    padding: 0 !important;
+    margin: 0 !important;
+    background-image: url(img/background.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.contact {
+    margin: 0 0 5px 0;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.header-list {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    margin: 0 0 5px 0;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0px;
+    padding: 10px 0px 1px 0px;
+    text-align: center;
+    color:#efefef !important;
+}
+
+.logo-icon {
+    color: greenyellow;
+}
+
+.footer-description-text {
+    font-size: 10px;
+    font-style:italic;
+}
+
+#reload-contacts {
+    color: #000;
+}

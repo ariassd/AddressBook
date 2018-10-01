@@ -1,0 +1,104 @@
+﻿@using AddressBook.Models;
+@using System.Collections.Generic;
+@{
+    /**/
+    ViewBag.Title = "Home Page";
+    List<Contact> list = Model;
+
+}
+
+<div class="header-list">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h1>Sample address book</h1>
+            <p class="lead">Contacts list. 
+                <a href="#" id="reload-contacts">
+                    <i class="fas fa-redo"></i>
+                </a>
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <!--<button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" data-target="#upload-file">
+                <i class="fas fa-upload"></i>
+                &nbsp;Upload
+            </button>-->
+            <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" data-target="#add-new-contact">
+                <i class="far fa-plus-circle"></i>
+                &nbsp;Add
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="contacts-room">
+    @Html.Partial("~/Views/Home/GetList.cshtml")
+</div>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="add-new-contact">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add new contact </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @Html.Partial("~/Views/Home/ContactForm.cshtml", new { FormName = "add-new-contact-values" })
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="save-contact">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="edit-contact">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit contact </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="edit-contact-content">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="save-contact-changes">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="upload-file">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Upload file </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="upload-file-form" enctype="multipart/form-data">
+
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="contacts-file" id="contacts-file">
+                        <label class="custom-file-label" for="customFile" id="label-file">Choose file</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="upload-file-contacts">Upload changes</button>
+            </div>
+        </div>
+    </div>
+</div>

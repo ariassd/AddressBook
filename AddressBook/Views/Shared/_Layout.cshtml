@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Book - Sample</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    @Styles.Render("~/Content/Site.css")
+    @Styles.Render("~/content/toastr.css")
+    @Styles.Render("~/Content/jquery.dm-uploader.css")
+</head>
+<body>
+    <nav class="navbar navbar-default sticky-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h1>
+                    <a class="navbar-brand" href="#">
+                        <span class="logo-icon"><i class="fas fa-book"></i></span>
+                        @Html.ActionLink("Address book", "Index", "Home", new { area = "" }, new { @class = "navbar-brand logo-text" })
+                    </a>
+                    <a class="navbar-brand" href="#">
+                        <i class="fas fa-code"></i>
+                        @Html.ActionLink("Api RESTFul", "Api", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </a>
+                </h1>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <hr />
+    </div>
+    <footer class="fixed-bottom">
+        <p>
+            &copy; @DateTime.Now.Year - Luis Arias
+            <br />
+            <span class="footer-description-text">This is an example application, you shouldn´t use this application for production.</span>
+        </p>
+
+    </footer>
+    @RenderSection("scripts", required: false)
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    @Scripts.Render("~/Scripts/Home/Home.js");
+    @Scripts.Render("~/scripts/toastr.js");
+    @Scripts.Render("~/scripts/jquery.dm-uploader.js");
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿@using AddressBook.Models;
+@using System.Collections.Generic;
+@{
+    Contact person = Model;
+    Layout = null;
+}
+<form id="edit-contact-values">
+    <input type="hidden" name="objectid" value="@person.Id" />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Name" value="@person.Name">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Last Name</label>
+            <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="@person.LastName">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">Email</label>
+        <input type="email" class="form-control" name="email" placeholder="someone@mail.com" value="@person.Email">
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">Phone:</label>
+        <input type="email" class="form-control" name="phone" placeholder="2040-0987" value="@person.Phone">
+    </div>
+    <div class="form-group">
+        <label for="inputAddress2">Notes</label>
+        <input type="text" class="form-control" name="notes" placeholder="Classmante, Collague, Friend" value="@person.Notes">
+    </div>
+</form>

@@ -1,0 +1,32 @@
+﻿@using AddressBook.Models;
+@using System.Collections.Generic;
+@{
+    string name = "";
+    try { name = Model.FormName; } catch { }
+    Layout = null;
+    }
+<form id="@name">
+    <input type="hidden" name="objectid" />
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Name" value="">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Last Name</label>
+            <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">Email</label>
+        <input type="email" class="form-control" name="email" placeholder="someone@mail.com" value="">
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">Phone:</label>
+        <input type="email" class="form-control" name="phone" placeholder="2040-0987" value="">
+    </div>
+    <div class="form-group">
+        <label for="inputAddress2">Notes</label>
+        <input type="text" class="form-control" name="notes" placeholder="Classmante, Colleague, Friend" value="">
+    </div>
+</form>
