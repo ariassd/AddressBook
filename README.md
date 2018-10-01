@@ -1,5 +1,17 @@
 # Address Book
-Simple address book made with Visual Studio for Mac (Community) and MongoDB
+Simple address book made with Visual Studio for Mac (Community) and MongoDB.
+This project doesn't have any type of security in this first version.
+
+#### TODO
+- Authentication and API KEY.
+- Contact file upload.
+- Contact file export.
+- Multiple phone numbers and email address.
+- Search.
+- Validations in the Front End.
+- Some extra pages ( Login, About, Contact, settings ).
+
+There are many things to do ;).
 
 ## This web site includes
 
