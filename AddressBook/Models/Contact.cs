@@ -2,6 +2,7 @@
 using MongoDB.Bson;
 using System.Collections.Generic;
 using MongoDB.Driver;
+using System.Linq;
 
 namespace AddressBook.Models
 {
@@ -12,8 +13,8 @@ namespace AddressBook.Models
         public ObjectId Id { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
+        public List<string> Phone { get; set; }
+        public List<string> Email { get; set; }
         public string Notes { get; set; }
         public string Status { get; set; }
 
@@ -75,6 +76,7 @@ namespace AddressBook.Models
             message = "";
             try 
             {
+                cleanData(newPerson);
                 MongoHelper.GetCollection<Contact>(COLLECTION).InsertOne(newPerson);
                 result = true;
             }
@@ -86,12 +88,35 @@ namespace AddressBook.Models
             return result;
         }
 
+        public static bool Add(List<Contact> contacts, out string message)
+        {
+            bool result = false;
+            message = "";
+            try
+            {
+                foreach (var con in contacts)
+                {
+                    cleanData(con);
+                }
+
+                MongoHelper.GetCollection<Contact>(COLLECTION).InsertMany(contacts);
+                result = true;
+            }
+            catch (Exception ex)
+            {
+                result = false;
+                message = $"An exception ocurred while creating contact. {ex.Message}";
+            }
+            return result;
+        }
+
         public static bool Edit(Contact person, out string message)
         {
             bool result = false;
             message = "";
             try
             {
+                person = cleanData(person);
                 var filter = Builders<Contact>.Filter.Eq(s => s.Id, person.Id);
                 var rmongo = MongoHelper.GetCollection<Contact>(COLLECTION).ReplaceOne(filter, person);
 
@@ -113,6 +138,17 @@ namespace AddressBook.Models
                 message = $"An exception ocurred while updating contact. {ex.Message}";
             }
             return result;
+        }
+
+        private static Contact cleanData(Contact contact)
+        {
+            contact.Email = contact.Email
+                    .Where(i => !string.IsNullOrWhiteSpace(i))
+                    .Distinct().ToList();
+            contact.Phone = contact.Phone
+                    .Where(i => !string.IsNullOrWhiteSpace(i))
+                    .Distinct().ToList();
+            return contact;
         }
     }
 }

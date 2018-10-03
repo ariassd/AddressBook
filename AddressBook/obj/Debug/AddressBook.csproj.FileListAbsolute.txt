@@ -2,6 +2,9 @@
 /Users/luisarias/Documents/AddressBook/AddressBook/bin/AddressBook.pdb
 /Users/luisarias/Documents/AddressBook/AddressBook/bin/Antlr3.Runtime.dll
 /Users/luisarias/Documents/AddressBook/AddressBook/bin/DnsClient.dll
+/Users/luisarias/Documents/AddressBook/AddressBook/bin/EPPlus.dll
+/Users/luisarias/Documents/AddressBook/AddressBook/bin/ExcelDataReader.DataSet.dll
+/Users/luisarias/Documents/AddressBook/AddressBook/bin/ExcelDataReader.dll
 /Users/luisarias/Documents/AddressBook/AddressBook/bin/Microsoft.Web.Infrastructure.dll
 /Users/luisarias/Documents/AddressBook/AddressBook/bin/MongoDB.Bson.dll
 /Users/luisarias/Documents/AddressBook/AddressBook/bin/MongoDB.Driver.Core.dll
@@ -37,6 +40,9 @@
 /Users/luisarias/Documents/AddressBook/AddressBook/bin/System.Web.Http.xml
 /Users/luisarias/Documents/AddressBook/AddressBook/bin/System.Web.Http.WebHost.xml
 /Users/luisarias/Documents/AddressBook/AddressBook/bin/Newtonsoft.Json.xml
+/Users/luisarias/Documents/AddressBook/AddressBook/bin/ExcelDataReader.xml
+/Users/luisarias/Documents/AddressBook/AddressBook/bin/ExcelDataReader.DataSet.xml
+/Users/luisarias/Documents/AddressBook/AddressBook/bin/EPPlus.xml
 /Users/luisarias/Documents/AddressBook/AddressBook/obj/Debug/AddressBook.csproj.CoreCompileInputs.cache
 /Users/luisarias/Documents/AddressBook/AddressBook/obj/Debug/AddressBook.csproj.CopyComplete
 /Users/luisarias/Documents/AddressBook/AddressBook/obj/Debug/AddressBook.dll

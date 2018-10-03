@@ -75,3 +75,33 @@ footer {
 #reload-contacts {
     color: #000;
 }
+
+.dropbox{
+
+    background-color: #F5F6CE;
+    border: dashed 4px #FF8000;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 150%;
+    color: blue;
+
+
+}
+
+.dropbox .rec-timer {
+    font-size: 20px;
+    color: blue;
+}
+
+.dropbox span {
+
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.dropbox div.mesajes-area {
+    font-size: 12px;
+    text-transform: none;
+    color: #FF8000
+}

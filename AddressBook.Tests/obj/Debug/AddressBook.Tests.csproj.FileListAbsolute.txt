@@ -15,6 +15,8 @@
 /Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/System.Web.WebPages.Razor.dll
 /Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/MongoDB.Bson.dll
 /Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/MongoDB.Driver.dll
+/Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/ExcelDataReader.dll
+/Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/ExcelDataReader.DataSet.dll
 /Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/MongoDB.Driver.Core.dll
 /Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/AddressBook.pdb
 /Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/System.Web.Razor.xml
@@ -31,6 +33,8 @@
 /Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/nunit.framework.xml
 /Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/MongoDB.Bson.xml
 /Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/MongoDB.Driver.xml
+/Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/ExcelDataReader.xml
+/Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/ExcelDataReader.DataSet.xml
 /Users/luisarias/Documents/AddressBook/AddressBook.Tests/bin/Debug/MongoDB.Driver.Core.xml
 /Users/luisarias/Documents/AddressBook/AddressBook.Tests/obj/Debug/AddressBook.Tests.csprojAssemblyReference.cache
 /Users/luisarias/Documents/AddressBook/AddressBook.Tests/obj/Debug/AddressBook.Tests.csproj.CoreCompileInputs.cache

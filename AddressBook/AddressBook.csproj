@@ -101,6 +101,19 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="ExcelDataReader">
+      <HintPath>..\packages\ExcelDataReader.3.4.1\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="ExcelDataReader.DataSet">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.4.1\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\packages\EPPlus.4.5.2.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
@@ -142,8 +155,6 @@
     <Content Include="Views\Home\GetList.cshtml" />
     <Content Include="Views\Home\ContactForm.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
-    <Content Include="Scripts\jquery.dm-uploader.js" />
-    <Content Include="Content\jquery.dm-uploader.css" />
     <Content Include="Views\Home\Api.cshtml" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -151,11 +162,13 @@
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1-vsdoc.js" />
     <Content Include="Views\Home\ApiDoc.cshtml" />
+    <Content Include="Scripts\jqExtensions.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\jquery-3.3.1.slim.min.map" />
     <None Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Content\ApiDoc.md" />
+    <None Include="Content\contacts.xlsx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

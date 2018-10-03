@@ -10,7 +10,7 @@
 <div class="header-list">
 
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-6">
             <h1>Sample address book</h1>
             <p class="lead">Contacts list. 
                 <a href="#" id="reload-contacts">
@@ -18,13 +18,27 @@
                 </a>
             </p>
         </div>
-        <div class="col-sm-4">
-            <!--<button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" data-target="#upload-file">
-                <i class="fas fa-upload"></i>
-                &nbsp;Upload
-            </button>-->
-            <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" data-target="#add-new-contact">
-                <i class="far fa-plus-circle"></i>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6">
+                    <form action="/Home/DownloadExcel">
+                        <button type="submit" id="btn-add-new-contact" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" data-target="#export-excel">
+                            <i class="fas fa-download"></i>
+                            &nbsp;Download
+                        </button>
+                    </form>
+                </div>
+                <div class="col-sm-6">
+                    <button type="button" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" data-target="#upload-file">
+                        <i class="fas fa-upload"></i>
+                        &nbsp;Upload
+                    </button>
+                </div>
+            </div>
+
+
+            <button type="button" id="btn-add-new-contact" class="btn btn-outline-primary btn-lg btn-block" data-toggle="modal" data-target="#add-new-contact">
+                <i class="fas fa-plus-circle"></i>
                 &nbsp;Add
             </button>
         </div>
@@ -45,9 +59,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                @Html.Partial("~/Views/Home/ContactForm.cshtml", new { FormName = "add-new-contact-values" })
-
+            <div class="modal-body div-add-new-contact">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -88,16 +100,19 @@
             </div>
             <div class="modal-body">
                 <form id="upload-file-form" enctype="multipart/form-data">
-
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="contacts-file" id="contacts-file">
-                        <label class="custom-file-label" for="customFile" id="label-file">Choose file</label>
+                    
+                    <div class="dropbox">
+                        Upload my contact list
+                        <br />
+                        (<span class="glyphicon glyphicon-file">&nbsp;Drop the file here</span>)
+                        &nbsp;
                     </div>
                 </form>
+                <br /> 
+                <p><a href="~/Content/contacts.xlsx"><i class="fas fa-file-excel"></i> Click here for a contact list file sample </a> </p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="upload-file-contacts">Upload changes</button>
             </div>
         </div>
     </div>

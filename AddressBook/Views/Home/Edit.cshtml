@@ -8,24 +8,41 @@
     <input type="hidden" name="objectid" value="@person.Id" />
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="inputEmail4">Name</label>
+            <label for="name">Name</label>
             <input type="text" class="form-control" name="name" placeholder="Name" value="@person.Name">
         </div>
         <div class="form-group col-md-6">
-            <label for="inputPassword4">Last Name</label>
+            <label for="lastname">Last Name</label>
             <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="@person.LastName">
         </div>
     </div>
     <div class="form-group">
-        <label for="inputAddress">Email</label>
-        <input type="email" class="form-control" name="email" placeholder="someone@mail.com" value="@person.Email">
+        <label for="inputAddress">
+            Email
+            <a href="#" id="add-email-field">
+                <i class="far fa-plus-square"></i>
+            </a>
+        </label>
+        @foreach (var item in @person.Email)
+        {
+            <input type="email" class="form-control email-field" name="email" placeholder="someone@mail.com" value="@item">
+        }
+
     </div>
     <div class="form-group">
-        <label for="inputAddress">Phone:</label>
-        <input type="email" class="form-control" name="phone" placeholder="2040-0987" value="@person.Phone">
+        <label for="phone">
+            Phone
+            <a href="#" id="add-phone-field">
+                <i class="far fa-plus-square"></i>
+            </a>
+        </label>
+        @foreach (var item in @person.Phone)
+        {
+            <input type="email" class="form-control phone-field" name="phone" placeholder="2040-0987" value="@item">
+        }
     </div>
     <div class="form-group">
-        <label for="inputAddress2">Notes</label>
+        <label for="notes">Notes</label>
         <input type="text" class="form-control" name="notes" placeholder="Classmante, Collague, Friend" value="@person.Notes">
     </div>
 </form>

@@ -47,8 +47,12 @@ This is an example of a simple response.
             "Id": "5bae98761a04400bc6477d20",
             "Name": "Luis Diego",
             "LastName": "Arias",
-            "Phone": "2345-1233",
-            "Email": "ariassd@mail.com",
+            "Phone": [
+                "2345-1233"
+            ],
+            "Email": [
+                "ariassd@mail.com"
+            ],
             "Notes": "Simple contact",
             "Status": "ac"
         }
@@ -56,7 +60,6 @@ This is an example of a simple response.
     "Code": 200,
     "Message": ""
 }
-
 ```
 
 
@@ -66,9 +69,9 @@ This is an example of a simple response.
 
 It contains the main information about an contact
 
-| id  | Name  | LastName  | Phone | Email | Notes | Status |
-|-----|-------|-----------|-------|-------|-------|--------|
-| UI  |String | String    |String | String|String | String |
+| id  | Name  | LastName  | Phone   | Email   | Notes | Status |
+|-----|-------|-----------|---------|---------|-------|--------|
+| UI  |String | String    |String[] |String[] |String | String |
 
 
 ## Available requests for the API
@@ -94,9 +97,26 @@ RESPONSE
             "Id": "5bae98761a04400bc6477d20",
             "Name": "Luis Diego",
             "LastName": "Arias",
-            "Phone": "2345-1233",
-            "Email": "ariassd@mail.com",
+            "Phone": [
+                "2345-1233"
+            ],
+            "Email": [
+                "ariassd@mail.com"
+            ],
             "Notes": "Simple contact",
+            "Status": "ac"
+        },
+        {
+            "Id": "5bafd4b51a04400e4786a50a",
+            "Name": "Luis Fernando",
+            "LastName": "Quesada",
+            "Phone": [
+                "060987654"
+            ],
+            "Email": [
+                "fquesada@mail.com"
+            ],
+            "Notes": "Poor man",
             "Status": "ac"
         }
     ],
@@ -114,7 +134,7 @@ This is the way to get a Contact using the ID of the system
 http://{SYSTEM URL}/api/Contact/{id}
 
 ```html
-http://{SYSTEM URL}/api/Contact/5bae98761a04400bc6477d20
+http://{SYSTEM URL}/api/Contact/5bb446ca1a0440063347cd15
 ```
 
 ```js
@@ -122,12 +142,16 @@ RESPONSE
 {
     "Content": [
         {
-            "Id": "5bae98761a04400bc6477d20",
-            "Name": "Luis Diego",
-            "LastName": "Arias",
-            "Phone": "2345-1233",
-            "Email": "ariassd@mail.com",
-            "Notes": "Simple contact",
+            "Id": "5bb446ca1a0440063347cd15",
+            "Name": "Jackson",
+            "LastName": "Cole",
+            "Phone": [
+                "34613584"
+            ],
+            "Email": [
+                "jackcole@mail.com"
+            ],
+            "Notes": "",
             "Status": "ac"
         }
     ],
@@ -156,8 +180,12 @@ RESPONSE
             "Id": "5bae98761a04400bc6477d20",
             "Name": "Luis Diego",
             "LastName": "Arias",
-            "Phone": "2345-1233",
-            "Email": "ariassd@mail.com",
+            "Phone": [
+                "2345-1233"
+            ],
+            "Email": [
+                "ariassd@mail.com"
+            ],
             "Notes": "Simple contact",
             "Status": "ac"
         },
@@ -165,9 +193,13 @@ RESPONSE
             "Id": "5bafd4b51a04400e4786a50a",
             "Name": "Luis Fernando",
             "LastName": "Quesada",
-            "Phone": "060987654",
-            "Email": "fquesada@mail.com",
-            "Notes": "Pour man",
+            "Phone": [
+                "060987654"
+            ],
+            "Email": [
+                "fquesada@mail.com"
+            ],
+            "Notes": "Poor man",
             "Status": "ac"
         }
     ],
@@ -195,8 +227,8 @@ REQUEST
     "Id": "",
     "Name": "First name",
     "LastName": "Last Name",
-    "Phone": "0987-1234",
-    "Email": "contact@mail.com",
+    "Phone": ["0987-1234"],
+    "Email": ["contact@mail.com"],
     "Notes": "Simple contact",
     "Status": "ac"
 }
@@ -232,8 +264,8 @@ REQUEST
     "Id": "",
     "Name": "First name",
     "LastName": "Last Name",
-    "Phone": "0987-1234",
-    "Email": "contact@mail.com",
+    "Phone": ["0987-1234"],
+    "Email": ["contact@mail.com"],
     "Notes": "Simple contact",
     "Status": "ac"
 }
@@ -257,21 +289,6 @@ http://{SYSTEM URL}/api/Contact/{id}
 
 ```html
 http://127.0.0.1:8080/api/Contact/5bb14de81a0440023efa2890
-```
-
-```js
-REQUEST
-
-{
-    "Id": "",
-    "Name": "First name",
-    "LastName": "Last Name",
-    "Phone": "0987-1234",
-    "Email": "contact@mail.com",
-    "Notes": "Simple contact",
-    "Status": "ac"
-}
-
 ```
 
 ```js

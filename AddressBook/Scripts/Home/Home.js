@@ -6,6 +6,15 @@ $(function() {
         loadContacts();
     });
 
+    $("#btn-add-new-contact").unbind('click').bind('click', function() {
+        $(".div-add-new-contact").html('')
+        $("#edit-contact-content").html('');
+        $.get("/Home/ContactForm", function(data) {
+            $(".div-add-new-contact").html(data)
+        });
+
+    });
+
     $("#save-contact").unbind('click').bind('click', function() {
         $.post('/Home/AddContact', $("#add-new-contact-values").serialize())
             .done(function(data) {
@@ -25,44 +34,30 @@ $(function() {
             });
     })
 
-
-
-    $('#contacts-file').on('change', function(evt) {
-        var file = this.files[0];
-        $("#label-file").html(file.name);
-        var reader = new FileReader();
-
-
-        var files = evt.target.files;
-        f = files[0];
-        var reader = new FileReader();
-        reader.onload = (function(theFile) {
-            return function(e) {
-                var text = e.target.result;
-                jQuery( '#ms_word_filtered_html' ).val( e.target.result );
-            };
-        })(f);
-        reader.readAsText(f);
-
-        //if (file.size > 1024) {
-        //    alert('max upload size is 1k')
-        //}
-        // Also see .name, .type
-    });
-    
-    $("#upload-file-contacts").unbind('click').bind('click', function() {
-
-        $(".custom-file").dmUploader("start");
-
-    })
-    
     loadEvents();
     $( document ).ajaxComplete(function() {
         loadEvents();
     });
 
+    $('.dropbox').filedrop({
+        callback: function (fileEncryptedData, fileName) {
+            var url = "/Home/UploadFile";
+            toastr.success("We are processing your file", 'Well ...');
+            $.post(url, { "fileName": fileName, "fileContent": fileEncryptedData.split("base64,")[1] }, function (data) {
+                if (data.Result == "OK") {
+                    toastr.success(data.Message, 'Nice job');
+                    loadContacts();
+                } else {
+                    toastr.error('Something was wrong, look at this ' + data.Message, 'Inconceivable!');
+                }
+            });
+        }
+    });
+
+    
 
 })
+
 
 function loadEvents() {
 
@@ -100,20 +95,49 @@ function loadEvents() {
             });
     })
 
-    $(".btn-edit-contact").unbind('click').bind('click', function() {
-        $.post('/Home/Edit', { id: $(this).attr("data-obj") } )
-            .done(function(data) {
+    $(".btn-edit-contact").unbind('click').bind('click', function () {
+        $(".div-add-new-contact").html('')
+        $("#edit-contact-content").html('');
+        $.post('/Home/Edit', { id: $(this).attr("data-obj") })
+            .done(function (data) {
                 $("#edit-contact-content").html(data);
-            }).fail(function(e) {
-                toastr.error('Something was wrong, look at this ' + JSON.stringify( e ), 'Inconceivable!');
-            }).always(function() {
-                console.log( "finished" );
+            }).fail(function (e) {
+                toastr.error('Something was wrong, look at this ' + JSON.stringify(e), 'Inconceivable!');
+            }).always(function () {
+                console.log("finished");
             })
-    })
+    });
 
-    setTimeout(function() {
-        setIframeHeight("apidociframe");
+    $("#add-email-field").unbind("click").bind("click", function (e) {
+        e.preventDefault();
+        if ($(".email-field").length < 3) {
+            var newField = $(".email-field").first().clone();
+            newField.val('');
+            $(".email-field").closest("div.form-group").append(newField);
+        }
+        else {
+            toastr.error('You reach the maximun of fields', 'Ooops!');
+        }
+    });
+
+    $("#add-phone-field").unbind("click").bind("click", function (e) {
+        e.preventDefault();
+        if ($(".phone-field").length < 3) {
+            var newField = $(".phone-field").first().clone();
+            newField.val('');
+            $(".phone-field").closest("div.form-group").append(newField);
+        } else {
+            toastr.error('You reach the maximun of fields', 'Ooops!');
+        }
+    });
+
+    setTimeout(function () {
+        if ($("#apidociframe").length >= 1) {
+            setIframeHeight("apidociframe");
+        }
     }, 2000);
+
+
 
 
 }
